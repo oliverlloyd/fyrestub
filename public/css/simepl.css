@@ -1,0 +1,377 @@
+/* MdM Blue: #0065bd */
+/* MdM Darker Blue: #004d91 */
+/* MdM Orange: #cf691e */
+/* MdM Darker Orange: #a64f0e */
+
+/* ---------------------------- General ------------------------------- */
+.clickable { cursor: pointer; }
+.overridden { color: #c60f13; }
+.emphasise { color: black; font-weight: bolder; }
+.postfix.clear { background-color: white; border-color: white; }
+
+html, body {
+    background-color: rgb(176,0,0);
+}
+/* ------------------------- rgb(237,28,36) ---------------------------- */
+
+
+/* ---------------------------- Progress ------------------------------- */
+.background {
+  border: none;
+  top: 15%;
+  left: 15%;
+  padding: 15px; 
+  height: 250px;
+  -webkit-border-radius: 10px; 
+  -moz-border-radius: 10px; 
+  opacity: 1;
+  background-color: #000;
+  color: #FFF;
+}
+.cursor { color: #F0F0F0; font-weight: bold; line-height: 1; font-size: 15px; margin: 0px 0px 10px 0px; }
+.row { max-width: 100%; }
+.msg { color: #F0F0F0; font-family: "Courier New", Courier, monospace; margin: 1px 0px 1px 0px; }
+.title { color: #2ba6cb; font-size: 17px; font-weight: bold; height: 35px; line-height: 20px; margin: 8px 0px 0px 0px; }
+/* -------------------------------------------------------------------- */
+
+
+
+/* ----------------------------- Icons -------------------------------- */
+
+.icon.disabled { color: #A8A8A8; cursor: default; }
+.icon.disabled:hover { color: #A8A8A8; }
+.icon.create { color: #5da423; }
+.icon.create:hover {color: green; }
+
+.icon.show.newmsg { color: #5da423; padding-top: 12px; }
+.icon.show.newmsg:hover {color: green; }
+.icon.delete.service {color: #970b0e; }
+.icon.delete.service:hover {color: #c60f13; }
+/* -------------------------------------------------------------------- */
+
+
+/* ---------------------------- Smaller ------------------------------- */
+@media only screen and  (min-width: 0px) and (max-width: 1024px) {
+  .topbar .title {
+    background-size: 37px;
+    background-position: 0px;
+    font: 16px 'Helevtica Neue', Helvetica, Arial, sans-serif;
+    line-height: 19px;
+    margin-top: 10px;
+  }
+  .topbar .title span { 
+    line-height: 16px;
+  }
+  .topbar { height: 60px; }
+  .topbar .name { height: 44px; }
+  .topbar .main.row {max-width: 100%; }
+
+  .topbar .account { font-size: 0.8em; }
+  .topbar .refresh { font-size: 0.8em; padding-top: 18px }
+  .topbar .account { padding-top: 16px;}
+
+  .dashboard .subheader { font-size: 0.75em; }
+  .dashboard .text { padding-top: 3px; }
+  .dashboard .dash.subheader { margin-bottom: 0em; }
+  .dashboard .icon { font-size: 1.6em; }
+
+  .msg { font-size: 0.8em }
+
+  .sumup.subheader { font-size: 0.75em; }
+  .sumup .icon { font-size: 3.2em; }
+
+  .footer { height: 60px; }
+  .footer { font-size: 0.9em; }
+  .footer .status { padding-top: 19px; }
+  .footer .syncro { padding-top: 16px; }
+  .footer .location { padding-top: 16px; }
+  .footer .override { padding-top: 21px; }
+}
+/* -------------------------------------------------------------------- */
+
+
+/* ----------------------------- d3.js -------------------------------- */
+.d3 text {
+  font: 12px helvetica;
+  font-weight: 300;
+  fill: #6f6f6f;
+}
+
+.d3 .axis path,
+.d3 .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.d3 .bar {
+  fill: steelblue;
+}
+
+.d3 .x.axis path {
+  display: none;
+}
+/* -------------------------------------------------------------------- */
+
+
+/* ----------------------- rickshaw.js -------------------------------- */
+#visits_type_time_container {
+        position: relative;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+}
+#visits_type_time {
+        display: inline-block;
+        margin-left: 40px;
+}
+#y_axis {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+}
+#legend {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 0 0 10px;
+}
+/* -------------------------------------------------------------------- */
+
+
+/* ---------------------------- Larger -------------------------------- */
+@media only screen and  (min-width: 1025px) {
+  .topbar .title {
+    background-size: 50px;
+    background-position: 10px;
+    font: 24px 'Helevtica Neue', Helvetica, Arial, sans-serif;
+    line-height: 25px;
+    margin-top: 13px;
+  }
+  .topbar .title span { 
+    line-height: 20px;
+  }
+  .topbar { height: 82px; }
+  .topbar .name { height: 64px; }
+  .topbar .main.row {max-width: 98%; }
+  .topbar .account.logout { padding-top: 23px;}
+  .topbar .account.login { padding-top: 18px;}
+  .topbar .refresh { padding-top: 25px }
+
+  .dashboard .icon { font-size: 2.0em; }
+
+  .sumup .icon { font-size: 4.0em; }
+
+  .footer { height: 60px; }
+  .footer { font-size: 1.1em; }
+  .footer .status { padding-top: 19px; }
+  .footer .syncro { padding-top: 13px; }
+  .footer .location { padding-top: 19px; }
+  .footer .override { padding-top: 22px; }
+}
+/* -------------------------------------------------------------------- */
+
+
+/* ---------------------------- Top Bar ------------------------------- */
+.topbar .title {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.topbar .title span { 
+  color: #c60f13;
+  text-transform: none;
+}
+.topbar {
+  background-color: #a0a0a0;
+  background-image: -moz-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6), to(#a0a0a0));
+  background-image: -webkit-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: -o-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: linear-gradient(to bottom, #e6e6e6, #a0a0a0);
+  background-repeat: repeat-x;
+  border: 1px solid #9d9d9d;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe6e6e6', endColorstr='#ffa0a0a0', GradientType=0);
+  *zoom: 1;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  padding-bottom: 15px;
+  z-index: 998;
+}
+
+.topbar_prod {
+  background-color: #a0a0a0;
+  background-image: -moz-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6), to(#a0a0a0));
+  background-image: -webkit-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: -o-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: linear-gradient(to bottom, #e6e6e6, #a0a0a0);
+}
+
+.topbar_test {
+  background-color: #DBDA9A;
+  background-image: -moz-linear-gradient(top, #E2E2D0, #DBDA9A);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E2E2D0), to(#DBDA9A));
+  background-image: -webkit-linear-gradient(top, #E2E2D0, #DBDA9A);
+  background-image: -o-linear-gradient(top, #E2E2D0, #DBDA9A);
+  background-image: linear-gradient(to bottom, #E2E2D0, #DBDA9A);
+}
+
+/*.topbar-section .has-form { padding: 7px 15px; height: 49px; }*/
+/*.contain-to-grid { background: transparent; }*/
+.topbar { max-width: 100%; }
+.topbar .content-locality select{ margin-top: 14px; }
+.topbar .content-locality label { margin-top: 14px; }
+.topbar .sublocationstatus { padding-right: 70px; }
+
+/*.topbar.expanded .title-area { background: transparent; }*/
+/*.topbar.expanded .content-locality select{ margin-top: 3px; }
+.topbar.expanded .content-locality label { margin-top: 8px; }*/
+
+
+.topbar .syringe { padding-top: 18px; padding-right: 100px;}
+/* -------------------------------------------------------------------- */
+
+
+/* ------------------------- Autocomplete ----------------------------- */
+/* autocomplete styling for clients with activity today */
+#ui-id-1 .ui-menu-item.modifiedToday a { font-weight: bolder; }
+/* -------------------------------------------------------------------- */
+
+
+/* ---------------------------- Search -------------------------------- */
+.content-search .icon { font-size: 2.0em; }
+/* -------------------------------------------------------------------- */
+
+
+/* ---------------------------- Footer -------------------------------- */
+.footer{
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  z-index: 998;
+  -webkit-box-shadow: 1px 0 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 1px 0 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 1px 0 4px rgba(0, 0, 0, 0.065);
+}
+.footer {
+  background-color: #a0a0a0;
+  background-image: -moz-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6), to(#a0a0a0));
+  background-image: -webkit-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: -o-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: linear-gradient(to bottom, #e6e6e6, #a0a0a0);
+  background-repeat: repeat-x;
+  border: 1px solid #9d9d9d;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe6e6e6', endColorstr='#ffa0a0a0', GradientType=0);
+  *zoom: 1;
+  -webkit-box-shadow: 6px 0 9px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 6px 0 9px rgba(0, 0, 0, 0.065);
+          box-shadow: 6px 0 9px rgba(0, 0, 0, 0.065);
+}
+
+.footer_prod {
+  background-color: #a0a0a0;
+  background-image: -moz-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6), to(#a0a0a0));
+  background-image: -webkit-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: -o-linear-gradient(top, #e6e6e6, #a0a0a0);
+  background-image: linear-gradient(to bottom, #e6e6e6, #a0a0a0);
+}
+
+.footer_test {
+  background-color: #DBDA9A;
+  background-image: -moz-linear-gradient(top, #E2E2D0, #DBDA9A);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E2E2D0), to(#DBDA9A));
+  background-image: -webkit-linear-gradient(top, #E2E2D0, #DBDA9A);
+  background-image: -o-linear-gradient(top, #E2E2D0, #DBDA9A);
+  background-image: linear-gradient(to bottom, #E2E2D0, #DBDA9A);
+}
+
+.footer .row{ max-width: 100%; }  
+
+/* compensates for footer */
+.page-content{
+  padding-bottom: 80px;
+}
+/* -------------------------------------------------------------------- */
+
+
+/* ------------------------- Client Summary --------------------------- */
+.sumup.subheader { line-height: 1.2em; margin-bottom: 0.1em; }
+.sumup-content { margin: 0 0 0em; }
+.sumup .highlight { color: #cf691e; }
+/*.sumup.sumup-content .main.row { max-width: 99%; }*/
+.hr-top { 
+  -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 3px 4px rgba(0, 0, 0, 0.065);
+  margin-bottom: 0.6em;
+}
+.hr-bottom { 
+  -webkit-box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.065);
+  margin-top: 0.6em;
+}
+/* -------------------------------------------------------------------- */
+
+
+/* ---------------------- Main Services Layout ------------------------- */
+.page-content {
+  margin-top: 0.875em;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.content-search { margin: 2em 0 0em; }
+.content-search form { margin: 0em 0 0em; }
+.services-controls { margin: 2em 0 1em; }
+/* -------------------------------------------------------------------- */
+
+
+/* -------------------------- Dashboard ------------------------------- */
+.dash { margin-bottom: 0; }
+.dashboard a.overridden:hover { color: #a64f0e; }
+.dashboard .row {padding-left: 0.07em; padding-right: 0.07em; }
+/*.dashboard.dash-content .row { max-width: 90%; }*/
+/* -------------------------------------------------------------------- */
+
+
+/* ------------------------ Recent Visits ----------------------------- */
+.page-recentvisits .icon { font-size: 2.0em; padding-top: 6px;}
+/* -------------------------------------------------------------------- */
+
+
+/* --------------------- Service Select Elements ---------------------- */
+/* customisations for the syringes rendu drop down select element on services page */
+form.custom .custom.dropdown .current {
+  line-height: 2.3em;
+  font-size: 1.2625em;
+  font-weight: bold;
+  color: #4d4d4d;
+}
+form.custom .custom.dropdown .selector { height: 2.95em; }
+form.custom .custom.dropdown { height: 44px; }
+form.custom .custom.dropdown ul li {
+  padding-top: 0.02em;
+  padding-bottom: 0.02em;
+  font-size: 1.0em;
+  padding-left: 0.575em;
+  color: #4d4d4d;
+}
+form.custom .custom.dropdown ul { max-height: 271px; }
+#service-syringues {
+  height: 44px;
+  font-size: 1.1325em;
+  font-weight: bold;
+  color: #4d4d4d;
+}
+/* --------------------------------------------------------------------- 

@@ -1,0 +1,37 @@
+CACHE MANIFEST
+
+# Oliver 2013-06-06:v43
+
+# Explicitly cached 'master entries'.
+CACHE:
+css/normalize.css
+css/foundation.min.css
+css/simepl.css
+css/jquery-ui-1.10.2.custom.min.css
+css/font-awesome.min.css
+
+font/fontawesome-webfont.woff?v=3.0.1
+font/fontawesome-webfont.ttf?v=3.0.1
+
+js/vendor/custom.modernizr.js
+js/vendor/jquery-ui-1.10.2.custom.min.js
+js/vendor/jquery.min.js
+js/vendor/jquery.ui.touch-punch.min.js
+js/vendor/moment.js
+js/vendor/zepto.js
+js/vendor/persona.js
+js/vendor/jquery.history.js
+
+js/views/main.js
+
+js/controllers/storageController.js
+js/controllers/syncController.js
+js/controllers/utilsController.js
+js/controllers/authenticationController.js
+
+js/foundation/foundation.min.js
+
+
+# Resources that require the user to be online.
+NETWORK:
+*

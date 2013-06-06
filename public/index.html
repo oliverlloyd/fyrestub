@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" manifest="simepl.appcache"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>EPL | Simulator</title>
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/foundation.min.css" />
+  <link rel="stylesheet" href="css/simepl.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/jquery-ui-1.10.2.custom.min.css" />
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+
+  <script> simepl={}; </script>
+
+  <script>
+    var isAuthenticated = localStorage.getItem("isAuthenticated");
+    console.log('isAuthenticated: ', isAuthenticated)
+    if ( isAuthenticated ) {
+      simepl.AUTHENTICATED = true;
+    } else {
+      simepl.AUTHENTICATED = false;
+    }
+  </script>
+</head>
+<body>
+
+  <!--NAVBAR START-->
+  <div id="topbar" class="topbar" style="position:relative">
+    <nav>
+      <div class="main row">
+        <div class="large-5 columns">
+          <h1 class="title homepage clickable"><span>EPL</span><br/>Simulator</h1>
+        </div>
+        <div class="large-2 columns">
+          <h6 style="display: none; color: #5da423" class="subheader clickable refresh"><strong>Newness!</strong></h6>
+        </div>
+        <div class="large-5 columns">
+          <div class="row right">
+            <div class="large-12 columns">
+              <h4 style="display: none;" class="subheader account login"><a id="label-login" class="clickable">Login</a></h4>
+              <h6 style="display: none;" class="subheader account logout"><span id="label-email" class="emphasise"></span>&nbsp&nbsp&nbsp<a id="label-logout" class="clickable">Logout?</a></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!--NAVBAR END-->
+
+
+  <!--///////////////// EVENTS PAGE START /////////////////-->
+  <div class="page-content">
+    <div class="row">
+      <div class="large-4 columns right">
+          <ul class="button-group round even-2">
+            <li><a class="small button success start">START</a></li>
+            <li><a class="small button alert stop disabled">STOP</a></li>
+          </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="ooyalla background">
+          <h1 class="ooyalla title">Score Draws</h1>
+          <span class="ooyalla msgs">
+            <h6 class="ooyalla msg"><span class="coveritlive cursor">*</span></h6>
+          </span>
+        </div>
+      </div>
+      <div class="large-6 columns">
+        <div class="coveritlive background">
+          <h1 class="coveritlive title">Latest</h1>
+          <span class="coveritlive msgs">
+            <h6 class="coveritlive msg"><span class="coveritlive cursor">*</span></h6>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--///////////////// EVENTS PAGE END /////////////////-->
+
+
+  <!--FOOTER START-->
+  <div class="footer spurious" id="footer">
+    <div class="row footer-row">
+      <div class="large-12 columns">
+        <div class="large-3 columns right status">
+          <span class="onlinestatus round label right" style="display: none">
+            <span class="statustext"></span><span id="label-servicecount"></span>
+          </span>
+          <i class="onlinestatus icon-refresh icon-spin icon-large right"></i>
+        </div>
+        <div class="large-9 columns right syncro">
+          <h6 class="subheader">Syncro: <span id="label-lastsync" class="emphasise"></span></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--FOOTER END-->
+
+
+  <!-- Check for Zepto support, load jQuery if necessary -->
+  <script>
+    document.write('<script src=/js/vendor/'
+      + ('__proto__' in {} ? 'zepto' : 'jquery')
+      + '.js><\/script>');
+  </script>
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+  
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>-->
+  <script src="js/vendor/jquery-ui-1.10.2.custom.min.js"></script>
+  <script src="js/vendor/jquery.ui.touch-punch.min.js"></script>
+  <script src="js/vendor/moment.js"></script>
+  <script src="js/vendor/persona.js"></script>
+  <script src="js/vendor/jquery.history.js"></script>
+
+  <!--<script src="js/foundation.min.js"></script>-->
+  <script src="js/foundation/foundation.min.js"></script>
+
+  <script src="js/views/main.js"></script>
+
+  <script src="js/controllers/storageController.js"></script>
+  <script src="js/controllers/syncController.js"></script>
+  <script src="js/controllers/authenticationController.js"></script>
+  <script src="js/controllers/utilsController.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>
