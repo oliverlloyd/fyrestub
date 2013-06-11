@@ -194,7 +194,7 @@ $(document).ready(function(){
       // Browser downloaded a new app cache.
       $('.refresh').show();
     } else { // Manifest didn't change
-     $('.refresh').hide();
+      $('.refresh').hide();
     }
   }, false);
 
@@ -210,15 +210,6 @@ $(document).ready(function(){
 
 
   // ------------------------------ Read in Local Storage Defaults ---------------------------------------
-  // get clients so we can initialise autocomplete
-  // storage.readAll('sync_clients', function(e, theclients){
-  //   if ( e ) console.error(e);
-  //   else {
-  //     autocomplete.initialise(theclients, clients.whenSelected); // init autocomplete
-  //     if ( !theclients ) storage.updateAll('sync_clients', []); // initialise is not present
-  //   }
-  // });
-
    // get any pending services so we can update display
   storage.readAll('pending', function(e, pending){
     if ( e ) console.error(e);
