@@ -4,7 +4,7 @@ var express = require("express"),
     http = require("http"),
     os = require("os"), // used to get hostname
     port = process.env.PORT || 7007,
-    server = module.exports = express(),
+    app = module.exports = express(),
     pjson = require('../package.json'),
     redis = require('redis'), // stores client session
     url = require('url'), // for splitting MONGO_URL
@@ -80,7 +80,7 @@ winston.add(winstonDB, {
 // FORCE SSL
 // =========
 if ( SIMEPL.host ){ // only force ssl for remote servers
-  server.use(function (req, res, next) { // Force SSL
+  app.use(function (req, res, next) { // Force SSL
     res.setHeader('Strict-Transport-Security', 'max-age=8640000; includeSubDomains');
     if (req.headers['x-forwarded-proto'] !== 'https') {
       return res.redirect(301, 'https://' + req.headers.host + '/');
@@ -92,17 +92,18 @@ if ( SIMEPL.host ){ // only force ssl for remote servers
 
 // SERVER CONFIGURATION
 // ====================
-server.configure(function() {
-  server.use(express.bodyParser());
-  server.use(express.cookieParser('ok so this is the epl project'));
-  server.use(express.session({ store: sessionStore }));
-  server.use(express.methodOverride());
-  server.use(express.errorHandler({
+var cookieParser = express.cookieParser('ok so this is the epl project');
+app.configure(function() {
+  app.use(express.bodyParser());
+  app.use(cookieParser);
+  app.use(express.session({ store: sessionStore }));
+  app.use(express.methodOverride());
+  app.use(express.errorHandler({
     dumpExceptions: true,
     showStack: true
   }));
-  server.use(express["static"](__dirname + "/../public"));
-  server.use(server.router);
+  app.use(express["static"](__dirname + "/../public"));
+  app.use(app.router);
 });
 
 
@@ -111,12 +112,12 @@ server.configure(function() {
 var audience;
 if ( SIMEPL.host ) {
   audience = 'https://' + SIMEPL.host;
-  winston.log('info', 'server.js | hostname is: ', audience);
+  winston.log('info', 'app.js | hostname is: ', audience);
 } else {
   audience = 'http://' + os.hostname() + ':' + port;
-  winston.log('info', 'server.js | hostname:is: ', audience);
+  winston.log('info', 'app.js | hostname:is: ', audience);
 }
-require("express-persona")(server, {
+require("express-persona")(app, {
   audience: audience, // Must match your browser's address bar
   sessionKey: "email"
 });
@@ -124,9 +125,16 @@ require("express-persona")(server, {
 
 // START NODEJS
 // ============
-http.createServer(server).listen(port);
+http.createServer(app).listen(port);
 
 
 // ROUTES
 // ======
-require('./routes')(server); // routes are setup in a separate directory
+require('./routes')(app); // routes are setup in a seperate directory
+
+
+// SOCKET.IO
+// =========
+var server = http.createServer(app); // we need to explicitly define the server for socket.io to work with Express 3
+// start socket.io listening - we pass in server, sessionStore and cookieParser here so that we can add the express session to the socket
+require('./modules/socket-manager.js').setupSocket(server, cookieParser, sessionStore);
